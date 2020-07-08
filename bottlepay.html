@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+      </script>
+    <title></title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="example">Bottle 결제</label>
+        <input class="0" id="TableNumber" type="number">
+        <input class="1" id="Bottle" type="text">
+        <input class="2" id="결제 담당자" type="text">
+        <input class="3" id="중복자" type="text">
+        <input class="4" id="안내자" type="text">
+        <input type="button" id="10" value="확인">
+      </div>
+    </form>
+    <script>
+      var table = new Array();
+      $("#10").on("click", function(e){
+         table[0] = $(".0").val();
+         table[1] = $(".1").val();
+         table[2] = $(".2").val();
+         table[3] = $(".3").val();
+         table[4] = $(".4").val();
+      });
+    </script>
+  </body>
+</html>

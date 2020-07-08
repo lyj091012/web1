@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+      </script>
+    <title></title>
+  </head>
+  <body>
+    <input type='button' id="1M" class="countG" value="남자1" >
+    <input type='button' id="1W" class="countG" value="여자1" ></br>
+    <input type='button' id="2M" class="countG" value="남자2" >
+    <input type="button" id="2W" class="countG" value="여자2" ></br>
+    <input type='button' id="3M" class="countG" value="남자3" >
+    <input type="button" id="3W" class="countG" value="여자3" ></br>
+    <input type="button" id="Reset" value="초기화">
+    <form>
+      <div>
+        <label for="example">테이블 번호</label>
+        <input id="example" type="number">
+        <input id="drink" type="text">
+        <input type="button" id="10" value="제출">
+      </div>
+    </form>
+    <script>
+      $("#10").on("click", function(e){
+        alert($("#example").val());
+        alert($("#drink").val());
+        });
+    var MN = 0;
+    var WN = 0;
+    let N = 0;
+     $("#1M").on('click', function(e){
+       const a = 1;
+       MN = MN + a;
+      $('#1').html(MN);
+      })
+    $("#1W").on('click', function(e){
+      const b = 1;
+      WN = WN + b;
+      $('#2').html(WN);
+      })
+    $("#2M").on('click', function(e){
+        const c = 2;
+        MN = MN + c;
+       $('#1').html(MN);
+       })
+      $("#2W").on('click', function(e){
+       const d = 2;
+       WN = WN + d;
+       $('#2').html(WN);
+       })
+    $("#3M").on('click', function(e){
+         const t = 3;
+         MN = MN + t;
+        $('#1').html(MN);
+        })
+      $("#3W").on('click', function(e){
+        const f = 3;
+        WN = WN + f;
+        $('#2').html(WN);
+        })
+        $('.countG').on('click',function(e){
+          $('#3').html(WN+MN);
+        });
+      $("#Reset").on('click', function(e){
+      MN = MN*0;
+      WN = WN*0;
+      $('#1').html(MN);
+      $('#2').html(WN);
+      $('#3').html(WN+MN);
+      })
+    </script>
+    <h3 >남자 입장수</h3>
+    <h3 id='1'>0</h3>
+    <h3 >여자 입장수</h3>
+    <h3 id='2'>0</h3>
+    <h3 >손님 입장수</h3>
+    <h3 id='3'>0</h3>
+  </body>
+</html>
