@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+      </script>
+    <title></title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="example">Bottle 결제</label>
+        <input class="0" id="TableNumber" type="text">
+        <input class="1" id="Bottle" type="text">
+        <input class="2" id="결제 담당자" type="text">
+        <input class="3" id="중복자" type="text">
+        <input class="4" id="안내자" type="text">
+        <input type="button" id="10" value="확인">
+      </div>
+    </form>
+
+
+    <div id="table1"></div>
+    <div id="table2"></div>
+    <p></p>
+
+            <select id="Table1">
+              <option>empty</option>
+              <option>사용중</option>
+              <option>예약</option>
+            </select>
+
+            <select id="Table2">
+              <option>empty</option>
+              <option>사용중</option>
+              <option>예약</option>
+            </select>
+
+            <script>
+
+            function displayVals() {
+              let singleValues1 = $( "#Table1" ).val();
+              let singleValues2 = $("#Table2").val();
+              $( "#table1" ).html( "<b>테이블 상황:</b> " + singleValues1);
+              $("#table2").html("<b>테이블 상황:</b> " + singleValues2);
+            }
+
+
+              $( "#Table1" ).change( displayVals );
+              $( "#Table2" ).change( displayVals );
+              displayVals();
+              </script>
+
+    <script>
+      var table = new Array();
+      $("#10").on("click", function(e){
+         table[0] = $(".0").val();
+         table[1] = $(".1").val();
+         table[2] = $(".2").val();
+         table[3] = $(".3").val();
+         table[4] = $(".4").val();
+         switch(table[0]){
+           case "T1":
+             if($( "#Table1" ).val() === "empty"){
+               $("#Table1 option:eq(1) ").attr("selected", "selected");
+               $("p").html("술 : " + table[1]);
+                displayVals();
+                 } else {
+                 alert("테이블이 있습니다.");
+                   }
+                   break;
+           case "T2":
+           if($( "#Table2" ).val() === "empty"){
+             $("#Table2 option:eq(1) ").attr("selected", "selected");
+             $("p").html("술 : " + table[1]);
+              displayVals();
+               } else {
+               alert("테이블이 있습니다.");
+                 }
+                 break;
+            default :
+            alert("잘못됐습니다.");
+        }
+      });
+
+
+    </script>
+
+
+  </body>
+</html>
